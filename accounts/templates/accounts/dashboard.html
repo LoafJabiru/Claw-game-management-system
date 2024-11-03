@@ -214,7 +214,7 @@
         logoutButton.addEventListener('click', function() {
             // Add actual logout logic here (e.g., clearing session, redirecting)
             alert('You have been logged out!');
-            window.location.href = 'login.html'; // Redirect to login page
+            window.location.href = {% url 'welcome.html' %}; // Redirect to login page
         });
     </script>
 
