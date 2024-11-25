@@ -4,6 +4,7 @@ Greetings! This repository is intended for the final project of the Claw Managem
 The members/contributors for this project are so named
 1. Bacolod, Paulo-Matthew
 2. Delos Cientos, Leo Jake
+3. Pabillon, Dayne
 
 About: 
 
