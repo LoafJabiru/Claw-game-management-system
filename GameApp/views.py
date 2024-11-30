@@ -40,6 +40,6 @@ def dashboard_view(request):
 def game1_view(request):
    return render(request, 'index.html')
 
-def my_view(request):
+def prize_view(request):
     records = Prize.objects.all()  # Retrieve all records
     return render(request, 'prizelist.html', {'records': records})

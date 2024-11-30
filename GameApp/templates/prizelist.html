@@ -18,7 +18,7 @@
         }
         
         .welcome-container {
-            text-align: center;
+            text-align: left;
             max-width: 600px;
             padding: 40px;
             background-color: #333;
@@ -72,16 +72,15 @@
         <h1>Prize List</h1>
         <p><ul>
             {% for record in records %}
-                <li>
-                    <h2>{{ record.name }}</h2>
-                    <p>{{ record.description }}</p>
-                </li>
+              
+                    <p>{{ record.prize_id }}
+                    {{ record.prize_name }}</p>
+                
             {% endfor %}
         </ul></p>
 
         <div class="button-container">
-            <a href="{% url 'login' %}" class="btn btn-login">Login</a>
-            <a href="{% url 'register' %}" class="btn btn-register">Register</a>
+            <a href="{% url 'dashboard' %}" class="btn btn-login">Back to Dashboard</a>
         </div>
     </div>
 </body>
