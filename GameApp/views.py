@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import RegisterForm, LoginForm
+from .models import Prize
 
 def register(request):
   if request.method == 'POST':
@@ -38,3 +39,7 @@ def dashboard_view(request):
 
 def game1_view(request):
    return render(request, 'index.html')
+
+def my_view(request):
+    records = Prize.objects.all()  # Retrieve all records
+    return render(request, 'prizelist.html', {'records': records})
