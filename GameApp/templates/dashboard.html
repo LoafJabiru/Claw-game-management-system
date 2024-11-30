@@ -155,7 +155,7 @@
                 <!-- Game 1 -->
                 <div class="game-card" data-game="Claw Machine Classic">
                     <div>
-                        <img src="https://cdn-icons-png.flaticon.com/512/1054/1054875.png" alt="Claw Machine">
+                        <a href="{% url 'game1' %}"> <img src="https://cdn-icons-png.flaticon.com/512/1054/1054875.png" alt="Claw Machine"></a>
                         <h3>Claw Machine Classic</h3>
                     </div>
                     <button>Select</button>
@@ -214,7 +214,7 @@
         logoutButton.addEventListener('click', function() {
             // Add actual logout logic here (e.g., clearing session, redirecting)
             alert('You have been logged out!');
-            window.location.href = "{% url 'welcome.html' %}"; // Redirect to login page
+            window.location.href = "{% url 'welcome' %}"; // Redirect to login page
         });
     </script>
 

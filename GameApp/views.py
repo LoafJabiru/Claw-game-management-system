@@ -35,3 +35,6 @@ def welcome_view(request):
 
 def dashboard_view(request):
    return render(request, 'dashboard.html')
+
+def game1_view(request):
+   return render(request, 'index.html')
