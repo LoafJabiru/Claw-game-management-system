@@ -1,10 +1,57 @@
 <!DOCTYPE html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: lightblue;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: gray;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#win-message {
+    font-size: 20px;
+}
+
+#play-again {
+    font-size: 18px;
+    padding: 10px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Three Buttons Game</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -14,9 +61,56 @@
             <button id="button2">Button 2</button>
             <button id="button3">Button 3</button>
         </div>
+        <br>
+        <br>
+        <br>
         <div id="win-message"></div>
+        <br>
+        <br>
+        <br>
+
         <button id="play-again">Play Again</button>
     </div>
     <script src="script.js"></script>
 </body>
+
+<script>
+    const button1 = document.getElementById('button1');
+const button2 = document.getElementById('button2');
+const button3 = document.getElementById('button3');
+const winMessage = document.getElementById('win-message');
+const playAgainButton = document.getElementById('play-again');
+
+let winningButton;
+
+function playGame() {
+  winningButton = Math.floor(Math.random() * 3) + 1; // Random number between 1 and 3
+  resetButtons();
+}
+
+function checkWin(buttonNumber) {
+  if (buttonNumber === winningButton) {
+    winMessage.textContent = 'You Win!';
+  } else {
+    winMessage.textContent = 'You Lose!';
+  }
+}
+
+function resetButtons() {
+  button1.style.backgroundColor = 'gray';
+  button2.style.backgroundColor = 'gray';
+  button3.style.backgroundColor = 'gray';
+  winMessage.textContent = '';
+}
+
+playGame();
+
+button1.addEventListener('click', () => checkWin(1));
+button2.addEventListener('click', () => checkWin(2));
+button3.addEventListener('click', () => checkWin(3));
+
+playAgainButton.addEventListener('click', () => {
+  playGame();
+});
+</script>
 </html>
