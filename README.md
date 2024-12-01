@@ -39,12 +39,14 @@ Added game logic for our games. Can now claw machine classic
 
 ------------------------------------------------------------------------------------------
 
-**To be Updated**
+**To be Updated/Issues**
 
-1. Log-in authentication not yet implemented. Therefore, the dashboard is not yet dynamic
+1. When logging in, the user logged in is created in the superusers instead of the register data. Therefore, the dashboard is not yet dynamic
 2. Only 1 game has been implemented
 
 ------------------------------------------------------------------------------------------
+
+
 
 Related links:
 ERD: ![ERD](https://github.com/user-attachments/assets/53e33678-ae6b-4fc0-8166-6adea5e507f5)
