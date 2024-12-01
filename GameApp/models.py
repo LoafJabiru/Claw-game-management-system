@@ -1,17 +1,28 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
+from django.contrib.auth.hashers import make_password
+from django.utils import timezone
 
 class User(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(max_length=100)
+    objects = UserManager()
+    is_staff = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
+    date_joined = models.DateTimeField(auto_now_add=True)
+    last_login = models.DateTimeField(auto_now=True)
+    username = models.CharField(unique=True, max_length=100)
     email = models.EmailField(unique=True)
     playername = models.CharField(max_length=100)
     balance=models.FloatField(default=0)
+    password=models.CharField(max_length=100)
 
     groups = models.ManyToManyField('auth.Group', related_name='custom_user_groups')
     user_permissions = models.ManyToManyField('auth.Permission', related_name='custom_user_permissions')
-
+    
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'playername']
+
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password)
 
     def __str__(self):
         return self.username

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claw Machine Game Dashboard</title>
     <style>
+
+
         body {
             font-family: Arial, sans-serif;
             background-color: #417f9c;
@@ -124,6 +126,30 @@
         .game-card button:hover {
             background-color: #45a049;
         }
+
+        .button {
+         background-color: #04AA6D; /* Green */
+         border: none;
+         color: white;
+         padding: 15px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 16px;
+         margin: 4px 2px;
+         cursor: pointer;
+        }
+
+        .button2 {background-color: #008CBA;} /* Blue */
+        .button3 {background-color: #f44336;} /* Red */ 
+        .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+        .button5 {background-color: #555555;} /* Black */
+
+        .logo {
+        background-color: red;
+        -webkit-mask: url(logo.svg) no-repeat center;
+        mask: url(logo.svg) no-repeat center;
+        }
     </style>
 </head>
 <body>
@@ -143,8 +169,10 @@
                 <div class="profile-info">
                     <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="Profile Picture" id="profile-pic">
                     <h3 id="profile-name">{{ user.username }}</h3>
-                    <p id="profile-level">Level: 15</p>
-                    <p id="profile-wins">Total Wins: 120</p>
+                    <p id="profile-balance">Balance: ${{ user.balance }}</p>
+                    
+                        <a href="{% url 'deposit' %}"><button type="submit">Deposit</button></a>
+      
                 </div>
             </div>
 
@@ -159,27 +187,27 @@
                         <h3>Claw Machine Classic</h3>
                     </div>
                     <a href="{% url 'game1' %}"> 
-                    <button>Select</button>
+                        <button class="button button5">Select</button>
                     </a>
                     
-                </div>
+                </div><b>UNAVAILABLE</b>
 
                 <!-- Game 2 -->
                 <div class="game-card" data-game="Claw Machine Deluxe">
                     <div>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6sPs8sGAWHvEWPJkFI_6jPUWiMnHBtQu9JtXj1oM_OMoxe6cAug9k-CgG8i2MY6xfbLY&usqp=CAU" alt="Claw Machine Deluxe">
-                        <h3>Claw Machine Deluxe</h3>
+                        <h3>Claw Machine Deluxe</h3> 
                     </div>
-                    <button>Select</button>
-                </div>
+                    <button class="button button5">Select</button>
+                </div><b>UNAVAILABLE</b>
 
                 <!-- Game 3 -->
                 <div class="game-card" data-game="Prize Machine Frenzy">
                     <div>
                         <img src="https://cdn-icons-png.flaticon.com/512/3068/3068887.png" alt="Prize Machine">
-                        <h3>Prize Machine Frenzy</h3>
+                        <h3>Prize Machine Frenzy</h3> 
                     </div>
-                    <button>Select</button>
+                    <button type="button" disabled>Select</button>
                 </div>
             </div>
         </div>

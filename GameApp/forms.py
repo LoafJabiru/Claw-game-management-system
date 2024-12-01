@@ -9,7 +9,7 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'playername','balance')
+        fields = ('username', 'email', 'playername', 'balance')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
@@ -25,6 +25,14 @@ class RegisterForm(forms.ModelForm):
             user.save()
         return user
 
+class DepositForm(forms.Form):
+  deposit_amount = forms.FloatField(min_value=1.00, label="Deposit Amount", required=True)
+
+  def clean_deposit_amount(self):
+    data = self.cleaned_data['deposit_amount']
+    return data
+  
+
 class LoginForm(forms.Form):
     username = forms.CharField(label='Username')
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
@@ -35,7 +43,10 @@ class LoginForm(forms.Form):
         password = cleaned_data.get('password')
 
         if username and password:
-            user = authenticate(username=username, password=password)
+            user = authenticate(username=username, password=password, model=User)
             if not user:
                 raise forms.ValidationError('Invalid username or password.')
         return cleaned_data
+    
+class PlayAgainForm(forms.Form):
+    user_id = forms.IntegerField(widget=forms.HiddenInput())
