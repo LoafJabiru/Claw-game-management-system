@@ -142,7 +142,7 @@
             <div class="sidebar">
                 <div class="profile-info">
                     <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="Profile Picture" id="profile-pic">
-                    <h3 id="profile-name">Player1</h3>
+                    <h3 id="profile-name">{{ user.username }}</h3>
                     <p id="profile-level">Level: 15</p>
                     <p id="profile-wins">Total Wins: 120</p>
                 </div>
@@ -191,14 +191,14 @@
         // Dynamic greeting based on the time of day
         const greetingElement = document.getElementById('greeting');
         const currentHour = new Date().getHours();
-        let greetingMessage = 'Hello, Player1!';
+        let greetingMessage = 'Hello, {{ user.username }}!';
         if (currentHour >= 5 && currentHour < 12) {
-            greetingMessage = 'Good Morning, Player1!';
+            greetingMessage = 'Good Morning, {{ user.username }}!';
         } else if (currentHour >= 12 && currentHour < 18) {
-            greetingMessage = 'Good Afternoon, Player1!';
+            greetingMessage = 'Good Afternoon, {{ user.username }}!';
         } else {
-            greetingMessage = 'Good Evening, Player1!';
-        }
+            greetingMessage = 'Good Evening, {{ user.username }}!';
+        } 
         greetingElement.textContent = greetingMessage;
 
         // Game selection handler

@@ -2,7 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import RegisterForm, LoginForm
-from .models import Prize
+from .models import Prize, User
 
 def register(request):
   if request.method == 'POST':
@@ -16,7 +16,7 @@ def register(request):
 
 def login_view(request):
     if request.method == 'POST':
-        form = LoginForm(request, data=request.POST)
+        form = LoginForm(data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -24,18 +24,21 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 # Redirect to the desired page after successful login
-                return redirect('dashboard')  # Replace 'home' with your desired URL name
+                return render(request,'dashboard.html')  # Replace 'home' with your desired URL name
             else:
                 pass
-        else:
-            form = LoginForm()
-            return render(request, 'login.html', {'form': form})
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
 
 def welcome_view(request):
    return render(request, 'welcome.html')
 
 def dashboard_view(request):
-   return render(request, 'dashboard.html')
+   session_id = request.session.session_key
+   username = request.session.get('username')
+   context = {'username': username}
+   return render(request, 'dashboard.html', context)
 
 def game1_view(request):
    return render(request, 'index.html')

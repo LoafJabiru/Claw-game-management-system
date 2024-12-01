@@ -5,6 +5,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     playername = models.CharField(max_length=100)
+    balance=models.FloatField(default=0)
 
     groups = models.ManyToManyField('auth.Group', related_name='custom_user_groups')
     user_permissions = models.ManyToManyField('auth.Permission', related_name='custom_user_permissions')
