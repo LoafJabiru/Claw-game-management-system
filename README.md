@@ -5,10 +5,13 @@ The members/contributors for this project are so named
 1. Bacolod, Paulo-Matthew
 2. Delos Cientos, Leo Jake
 
+------------------------------------------------------------------------------------------
 
 About: 
 
 The Claw game is an online gaming platform centered around claw machines. Due to the Covid-19 pandemic that happened during the year 2020, a lot of game centers lost revenue with claw games as their main source. What they did to remedy this issue is to create an online platform where users can play their favorite claw machine games from the safety of their own home. Our project is a similar creation of this idea brought about through the crisis that happened.
+
+------------------------------------------------------------------------------------------
 
 Functional Requirements:
 
@@ -20,11 +23,28 @@ Functional Requirements:
 
 **Collect**: The player can collect all the prizes they have won and be delivered on their homes
 
+------------------------------------------------------------------------------------------
+
 History:  
 
 **1.0**
 
 Created database and views of players, games, and machines
+
+------------------------------------------------------------------------------------------
+
+**1.1**
+
+Added game logic for our games. Can now claw machine classic
+
+------------------------------------------------------------------------------------------
+
+**To be Updated**
+
+1. Log-in authentication not yet implemented. Therefore, the dashboard is not yet dynamic
+2. Only 1 game has been implemented
+
+------------------------------------------------------------------------------------------
 
 Related links:
 ERD: ![ERD](https://github.com/user-attachments/assets/53e33678-ae6b-4fc0-8166-6adea5e507f5)
