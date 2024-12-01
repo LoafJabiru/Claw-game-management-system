@@ -21,10 +21,10 @@ def login_view(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=username, password=password)
-            if user is not None:
+            if user:
                 login(request, user)
                 # Redirect to the desired page after successful login
-                return render(request,'dashboard.html')  # Replace 'home' with your desired URL name
+                return redirect('dashboard')  # Replace 'home' with your desired URL name
             else:
                 pass
     else:
