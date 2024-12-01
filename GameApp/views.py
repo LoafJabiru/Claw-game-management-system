@@ -16,20 +16,23 @@ def register(request):
 
 def login_view(request):
     if request.method == 'POST':
-        form = LoginForm(request, data=request.POST)
+        form = LoginForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=username, password=password)
-            if user is not None:
+            if user:
                 login(request, user)
-                # Redirect to the desired page after successful login
-                return redirect('dashboard')  # Replace 'home' with your desired URL name
+                # Redirect to the dashboard after successful login
+                return redirect('dashboard.html')
             else:
-                pass
+                # If authentication fails, show an error message
+                return render(request, 'login.html', {'form': form, 'error': 'Invalid username or password'})
         else:
-            form = LoginForm()
-            return render(request, 'login.html', {'form': form})
+            return render(request, 'dashboard.html', {'form': form})
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form})
 
 def welcome_view(request):
    return render(request, 'welcome.html')
