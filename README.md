@@ -35,20 +35,28 @@ Created database and views of players, games, and machines
 
 **1.1**
 
-Added game logic for our games. Can now claw machine classic
+Can now successfully log-in and register 
 
 ------------------------------------------------------------------------------------------
+
+**1.2**
+
+Added game logic for our games. Can now claw machine classic
+Implemented prize list and deposit balance functionality
+
+------------------------------------------------------------------------------------------
+
 
 **To be Updated/Issues**
 
-1. When logging in, the user logged in is created in the superusers instead of the register data. Therefore, the dashboard is not yet dynamic
-2. Only 1 game has been implemented
+1. Only 1 game has been implemented and can be played
+2. Cannot claim prize
+3. Game logic is not connected to server side
 
 ------------------------------------------------------------------------------------------
 
 
 
-Related links:
 ERD: ![ERD](https://github.com/user-attachments/assets/53e33678-ae6b-4fc0-8166-6adea5e507f5)
 
 GANTT: ![Gantt](https://github.com/user-attachments/assets/670704d9-c46a-436a-91ca-e243b5514a55)
