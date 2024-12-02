@@ -34,3 +34,14 @@ class Prize(models.Model):
 
     def __str__(self):
         return self.prize_id
+
+class PrizeWon(models.Model):
+    user = models.ForeignKey('User', on_delete=models.CASCADE)  # Foreign key to User model
+    prize = models.ForeignKey('Prize', on_delete=models.CASCADE)  # Foreign key to Prize model
+    date_won = models.DateTimeField(auto_now_add=True)  # Automatically record date when prize is won
+
+    class Meta:
+        unique_together = ('user', 'prize')  # Ensure a user can't win the same prize twice
+
+    def __str__(self):
+        return f"{self.user.username} won {self.prize.prize_name} on {self.date_won}"

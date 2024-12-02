@@ -75,13 +75,13 @@
             {% for record in records %}
             
                 <input type="radio" name="prize_id" value="{{ record.id }}">
-                <label>{{ record.prize_id }} {{ record.prize_name }}</label>
+                <label>{{ record.prize_id }} {{ record.prize_name }} <br>value: ${{ record.value }}.00</label>
                 <br><br>
         {% endfor %}
-
+            
             
         </ul></p>
-        Balance: {{ user.balance }}
+        Balance: ${{ user.balance }}
 
         
        <br><br>
