@@ -64,5 +64,8 @@ HTML/CSS/JS
 
 ERD: ![ERD](https://github.com/user-attachments/assets/53e33678-ae6b-4fc0-8166-6adea5e507f5)
 
+Updated ERD: ![Screenshot 2024-12-02 102201](https://github.com/user-attachments/assets/6da88be6-1350-4174-a464-0fd1546f1b8d)
+
+
 GANTT: ![Screenshot 2024-12-02 100954](https://github.com/user-attachments/assets/30669da4-a67c-48fd-b2c6-f90cdff63027)
 
