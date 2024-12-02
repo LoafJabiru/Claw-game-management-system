@@ -77,10 +77,10 @@ button {
           {% csrf_token %}
           
           <input type="hidden" name="user_id" value="{{ user.id }}">
-          <button type="submit">Insert coin</button>
+          <button id="play-again">Play Again</button>
       </form>
 
-        <button id="play-again">Play Again</button>
+        
 
         <a href="{% url 'prizelist' %}"> <button id="prizes">See Prize List</button> </a><br><br><br><br><br><br><br><br><br>
         <a href="{% url 'dashboard' %}"> <button id="prizes">Back to Dashboard</button> </a>

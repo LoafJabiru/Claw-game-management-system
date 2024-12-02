@@ -85,3 +85,14 @@ def play_again(request):
                 return redirect('game1', error_message='Insufficient balance!')
     else:
         return redirect('game1')
+
+
+
+def redeem_view(request):
+    user = request.user
+    records = Prize.objects.filter(
+        value__lte=user.balance,  # Filter by balance
+    )
+    return render(request, 'exchange.html', {'records': records})
+
+

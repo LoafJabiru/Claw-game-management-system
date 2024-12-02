@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIZE LIST</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #417f9c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+        
+        .welcome-container {
+            text-align: left;
+            max-width: 600px;
+            padding: 40px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .btn-login {
+            background-color: #4CAF50;
+        }
+
+        .btn-register {
+            background-color: #FFA500;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Prize List</h1>
+        <p><ul>
+            
+            {% for record in records %}
+            
+                <input type="radio" name="prize_id" value="{{ record.id }}">
+                <label>{{ record.prize_id }} {{ record.prize_name }}</label>
+                <br><br>
+        {% endfor %}
+
+            
+        </ul></p>
+        Balance: {{ user.balance }}
+
+        
+       <br><br>
+            <button type="submit">Redeem Selected Prize</button><br><br><br><br><br><br><br>
+            <a href="{% url 'dashboard' %}" class="btn btn-login">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

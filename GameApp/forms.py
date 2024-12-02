@@ -50,3 +50,5 @@ class LoginForm(forms.Form):
     
 class PlayAgainForm(forms.Form):
     user_id = forms.IntegerField(widget=forms.HiddenInput())
+
+  

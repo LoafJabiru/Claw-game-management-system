@@ -10,4 +10,5 @@ urlpatterns = [
     path('prizelist/', views.prize_view, name='prizelist'),
     path('deposit/', views.deposit_view, name='deposit'),
     path('index/', views.play_again, name='playagain'),
+    path('exchange/', views.redeem_view, name='exchange'),
 ]

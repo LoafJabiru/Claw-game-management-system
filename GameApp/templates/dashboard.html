@@ -172,7 +172,7 @@
                     <p id="profile-balance">Balance: ${{ user.balance }}</p>
                     
                         <a href="{% url 'deposit' %}"><button type="submit">Deposit</button></a>
-      
+                        <a href="{% url 'exchange' %}"><button type="submit">Redeem Prizes</button></a>
                 </div>
             </div>
 
@@ -234,7 +234,7 @@
         gameCards.forEach(button => {
             button.addEventListener('click', function() {
                 const gameName = this.parentElement.getAttribute('data-game');
-                alert(`You have selected: ${gameName}`);
+                alert(`You have selected: Claw Machine Classic`);
                 // Redirect to the game (replace with actual game loading logic)
                 window.location.href = `game.html?game=${gameName}`;
             });
