@@ -55,7 +55,12 @@ Implemented prize list and deposit balance functionality
 
 ------------------------------------------------------------------------------------------
 
+**This has been made with the following frameworks**
+Python/django
+DBsqlite3
+HTML/CSS/JS
 
+------------------------------------------------------------------------------------------
 
 ERD: ![ERD](https://github.com/user-attachments/assets/53e33678-ae6b-4fc0-8166-6adea5e507f5)
 
